@@ -7,17 +7,29 @@ import './assets/stylesheets/style.css'
 
 /****** ADD YOUR CODE AFTER THIS LINE ******/
 
-const Hello = () => (
-  <div>Hello World!!</div>
+const Weather() =>
+(
+	fetch('https://weatherapp.eficode.fi/api/forecast')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(Weather) {
+    console.log(JSON.stringify(Weather));
+  });
 );
 
 class App extends Component {
-  render() {
-    return (
-      <Hello />
-    );
+ render() {
+  return (
+    <Weather />
+   );
   }
 }
+
+
+/****** CODE FOR WEATHER APP STARTS HERE ******/
+
+
 
 /****** DO NOT DELETE AFTER THIS LINE ******/
 
